@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: customserdesdemo
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    streams:
+      application-id: fraud-detection-app
+      auto-startup: true
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: com.kafka.serdes.TransactionSerdes
