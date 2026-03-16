@@ -28,8 +28,7 @@ public class FraudDetectionStream {
 
         // Step 1: Read messages from the input topic
         KStream<String, String> transactionsStream = builder.stream("transactions");
-        System.out.print("Hey Baby ! "+ transactionsStream);
-
+        
         // Step 2: Filter suspicious transactions
         KStream<String, String> fraudTransactionStream = transactionsStream
                 .filter((key, value) -> isSuspicious(value))
